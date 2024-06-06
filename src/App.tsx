@@ -1,5 +1,4 @@
 import "./App.css";
-import "@twa-dev/sdk";
 
 function App() {
   return (

@@ -75,19 +75,48 @@ function App() {
   return (
     <div>
       <div>
-        <p style={{ textAlign: "center", color: 'red', fontSize: '28px', fontWeight: 'bold' }}>Demo Bot v2</p>
+        <p
+          style={{
+            textAlign: "center",
+            color: "red",
+            fontSize: "28px",
+            fontWeight: "bold",
+          }}
+        >
+          Demo Bot v2
+        </p>
       </div>
       <div id="scrollable-el" className="scrollable-element">
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 5</div>
-        <div>Item 6</div>
-        <div>Item 7</div>
-        <div>Item 8</div>
-        <div>Item 9</div>
-        <div>Item 10</div>
+        <div>
+          <p style={{ color: "blue" }}>Item 1</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 2</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 3</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 4</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 5</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 6</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 7</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 8</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 9</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 10</p>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "./App.css";
 
+import ScrollComponent from "./ScrollComponent";
+
 const tg = Telegram.WebApp;
 
 function App() {
@@ -8,7 +10,7 @@ function App() {
     if (!tg) return;
     if (window.tgAppInited) return;
     window.tgAppInited = true;
-    const scrollableEl = document.getElementById("scrollable-el");
+    // const scrollableEl = document.getElementById("scrollable-el");
     // ???
     console.log("Init Tg");
     tg.expand();
@@ -29,46 +31,46 @@ function App() {
 
     setupDocument(true);
 
-    let ts: number | undefined;
-    const onTouchStart = (e: TouchEvent) => {
-      ts = e.touches[0].clientY;
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (scrollableEl) {
-        console.warn("onTouchMove");
-        const scroll = scrollableEl.scrollTop;
-        const te = e.changedTouches[0].clientY;
-        if (scroll <= 0 && ts! < te) {
-          e.preventDefault();
-        }
-      } else {
-        e.preventDefault();
-      }
-    };
-    document.documentElement.addEventListener("touchstart", onTouchStart, {
-      passive: false,
-    });
-    document.documentElement.addEventListener("touchmove", onTouchMove, {
-      passive: false,
-    });
+    // let ts: number | undefined;
+    // const onTouchStart = (e: TouchEvent) => {
+    //   ts = e.touches[0].clientY;
+    // };
+    // const onTouchMove = (e: TouchEvent) => {
+    //   if (scrollableEl) {
+    //     console.warn("onTouchMove");
+    //     const scroll = scrollableEl.scrollTop;
+    //     const te = e.changedTouches[0].clientY;
+    //     if (scroll <= 0 && ts! < te) {
+    //       e.preventDefault();
+    //     }
+    //   } else {
+    //     e.preventDefault();
+    //   }
+    // };
+    // document.documentElement.addEventListener("touchstart", onTouchStart, {
+    //   passive: false,
+    // });
+    // document.documentElement.addEventListener("touchmove", onTouchMove, {
+    //   passive: false,
+    // });
 
-    const onScroll = () => {
-      if (window.scrollY < overflow) {
-        window.scrollTo(0, overflow);
-        if (scrollableEl) {
-          scrollableEl.scrollTo(0, 0);
-        }
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    // const onScroll = () => {
+    //   if (window.scrollY < overflow) {
+    //     window.scrollTo(0, overflow);
+    //     if (scrollableEl) {
+    //       scrollableEl.scrollTo(0, 0);
+    //     }
+    //   }
+    // };
+    // window.addEventListener("scroll", onScroll, { passive: true });
 
     // authorize here
 
     return () => {
       setupDocument(false);
-      document.documentElement.removeEventListener("touchstart", onTouchStart);
-      document.documentElement.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("scroll", onScroll);
+      // document.documentElement.removeEventListener("touchstart", onTouchStart);
+      // document.documentElement.removeEventListener("touchmove", onTouchMove);
+      // window.removeEventListener("scroll", onScroll);
     };
   }, [tg]);
 
@@ -83,10 +85,11 @@ function App() {
             fontWeight: "bold",
           }}
         >
-          Demo Bot v1.0.6
+          Demo Bot v1.0.7
         </p>
       </div>
-      <div id="scrollable-el" className="scrollable-element">
+      <ScrollComponent />
+      {/* <div id="scrollable-el" className="scrollable-element">
         <div>
           <p style={{ color: "blue" }}>Item 1</p>
         </div>
@@ -147,7 +150,7 @@ function App() {
         <div>
           <p style={{ color: "blue" }}>Item 20</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

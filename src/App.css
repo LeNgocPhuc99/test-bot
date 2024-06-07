@@ -14,7 +14,7 @@ body {
   margin-top: 10px;
   border: 4px solid green;
   overflow-y: scroll;
-  height: 24px;
+  height: 80vh;
   font-size: 6.25rem;
 }
 

@@ -1,7 +1,17 @@
-/* body {
-  touch-action: none !important;
-} */
+html {
+  height: auto;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
 .scrollable-element {
+  margin-top: 10px;
   border: 2px solid green;
   overflow-y: scroll;
   height: 32rem;

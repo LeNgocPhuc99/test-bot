@@ -13,7 +13,7 @@ function App() {
     // const scrollableEl = document.getElementById("scrollable-el");
     // ???
     console.log("Init Tg");
-    tg.expand();
+    // tg.expand();
     const overflow = 100;
     function setupDocument(enable: boolean) {
       if (enable) {
@@ -85,7 +85,7 @@ function App() {
             fontWeight: "bold",
           }}
         >
-          Demo Bot v1.0.7
+          Demo Bot v1.0.8
         </p>
       </div>
       <ScrollComponent />

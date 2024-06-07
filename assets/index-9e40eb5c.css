@@ -1,1 +1,0 @@
-html{height:auto;overflow:hidden}body{min-height:100vh;height:100vh;overflow:hidden;isolation:isolate}.scrollable-element{margin-top:10px;border:4px solid green;overflow-y:scroll;height:24px;font-size:6.25rem}.container{display:flex;gap:4px;align-items:center}.no-script-element{border:2px solid red;overflow-y:scroll;height:32rem;font-size:6.25rem;border:1px solid}

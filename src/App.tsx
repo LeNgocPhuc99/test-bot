@@ -83,7 +83,7 @@ function App() {
             fontWeight: "bold",
           }}
         >
-          Demo Bot v3.0.1
+          Demo Bot v1.0.3
         </p>
       </div>
       <div id="scrollable-el" className="scrollable-element">

@@ -11,7 +11,7 @@ function App() {
     const scrollableEl = document.getElementById("scrollable-el");
     // ???
     console.log("Init Tg");
-    // tg.expand();
+    tg.expand();
     const overflow = 100;
     function setupDocument(enable: boolean) {
       if (enable) {
@@ -75,7 +75,7 @@ function App() {
   return (
     <div>
       <div>
-        <p style={{ textAlign: "center", color: 'red', fontSize: '28px', fontWeight: 'bold' }}>Demo Bot</p>
+        <p style={{ textAlign: "center", color: 'red', fontSize: '28px', fontWeight: 'bold' }}>Demo Bot v2</p>
       </div>
       <div id="scrollable-el" className="scrollable-element">
         <div>Item 1</div>

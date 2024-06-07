@@ -75,7 +75,7 @@ function App() {
   return (
     <div>
       <div>
-        <p style={{ textAlign: "center" }}>Demo Bot</p>
+        <p style={{ textAlign: "center", color: 'red', fontSize: '28px', fontWeight: 'bold' }}>Demo Bot</p>
       </div>
       <div id="scrollable-el" className="scrollable-element">
         <div>Item 1</div>

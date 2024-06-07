@@ -14,8 +14,9 @@ body {
   margin-top: 10px;
   border: 4px solid green;
   overflow-y: scroll;
-  height: 32rem;
+  height: 24px;
   font-size: 6.25rem;
+  color: blue;
 }
 
 .container {

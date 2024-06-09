@@ -72,7 +72,7 @@ const ScrollComponent = () => {
 
   return (
     <div>
-      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.10</p>
+      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.11</p>
       <div id="scrollable-el" className="scrollable-element">
         <div>
           <p style={{ color: "blue" }}>Item 1</p>

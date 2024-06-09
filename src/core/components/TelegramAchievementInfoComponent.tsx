@@ -12,8 +12,7 @@ import Typography from "@mui/material/Typography";
 // ** Components Import
 import TelegramRewardPathComponent from "./TelegramRewardPathComponent";
 
-// ** Config Import
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
+import giftImage from "../../assets/icons/Gift.png";
 
 // ** Types Import
 import { ITelegramAchievementInfo } from "../types/quest";
@@ -29,7 +28,7 @@ const TelegramAchievementInfoComponent = ({
   const theme = useTheme();
   const { t } = useTranslation();
 
-  const isDarkMode = theme.palette.mode === 'dark';
+  const isDarkMode = theme.palette.mode === "dark";
 
   const isClaimedPath = useCallback(
     (index: number) => {
@@ -75,11 +74,11 @@ const TelegramAchievementInfoComponent = ({
           <Typography
             sx={{
               textAlign: "center",
-              color: 'text.primary'
+              color: "text.primary",
             }}
           >
             <img
-              src={`${ICON_IMAGE_PATH}/Gift.png`}
+              src={giftImage}
               style={{
                 width: "1.5rem",
                 objectFit: "cover",
@@ -103,10 +102,14 @@ const TelegramAchievementInfoComponent = ({
               textAlign: "center",
             }}
           >
-           {t(`TelegramAchievementInfoComponent|${info.id}-counter-description`)}
+            {t(
+              `TelegramAchievementInfoComponent|${info.id}-counter-description`
+            )}
           </Typography>
           <Box
-            className={isDarkMode ? "pixel-borders--dark--2" : "pixel-borders--2"}
+            className={
+              isDarkMode ? "pixel-borders--dark--2" : "pixel-borders--2"
+            }
             sx={{
               px: "4rem",
               py: "0.5rem",

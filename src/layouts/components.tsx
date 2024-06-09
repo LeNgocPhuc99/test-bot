@@ -6,15 +6,11 @@ import { useTranslation } from "react-i18next";
 // ** MUI Import
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import BottomNavigation from "@mui/material/BottomNavigation";
 
 import { TabEnum, QuestTab, QuestTabContent } from "../core/pages/QuestPage";
 
-import { ICON_IMAGE_PATH } from "../core/configs/appConfigs";
 
 const QuestPage = ({
   tabIndex,
@@ -96,7 +92,6 @@ const QuestPage = ({
         id="scrollable-el"
         className="pixel-dialog--dark--2"
         sx={{
-          alignContent: "center",
           marginBottom: "3.2rem",
           padding: "1.5rem",
           backdropFilter: "blur(10px)",
@@ -115,6 +110,8 @@ const QuestPage = ({
     </>
   );
 };
+
+import bgImage from '../assets/static/memetd/background.png'
 
 export const QuestPageWrapper = () => {
   const [tabIndex, setTabIndex] = useState<number>(TabEnum.TICKET);
@@ -161,7 +158,7 @@ export const QuestPageWrapper = () => {
         sx={{
           width: "100vw",
           height: "100vh",
-          background: `url(public/static/memetd/background.png) no-repeat center center`,
+          background: `url(${bgImage}) no-repeat center center`,
           backgroundSize: "cover",
           color: "white",
           bgcolor: "#06090a",

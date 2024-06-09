@@ -3,6 +3,8 @@ import React, { useState, useCallback, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
+import SwipeableViews from "react-swipeable-views";
+
 // ** MUI Import
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -14,9 +16,6 @@ import TelegramQuest from "../views/quest/TelegramQuest";
 import TelegramRefReward from "../views/quest/TelegramRefReward";
 import TelegramTicketRank from "../views/quest/TelegramTicketRank";
 import TelegramAchievement from "../views/quest/TelegramAchievement";
-
-// ** Config Import
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
 
 export const TabEnum = {
   TICKET: 0,
@@ -33,12 +32,6 @@ const TABS = [
     buttonClassNameActive: "pixel-box--primary",
     buttonDarkClassName: "pixel-box--dark",
     buttonDarkClassNameActive: "pixel-box--primary--dark",
-    icon: (
-      <img
-        src={`${ICON_IMAGE_PATH}/Ticket.png`}
-        style={{ height: "2.5rem", objectFit: "cover" }}
-      />
-    ),
     // content: <TelegramRefReward />,
   },
   {
@@ -48,12 +41,6 @@ const TABS = [
     buttonClassNameActive: "pixel-box--primary",
     buttonDarkClassName: "pixel-box--dark",
     buttonDarkClassNameActive: "pixel-box--primary--dark",
-    icon: (
-      <img
-        src={`${ICON_IMAGE_PATH}/QuestSmall.png`}
-        style={{ height: "2.5rem", objectFit: "cover" }}
-      />
-    ),
     // content: <TelegramQuest />,
   },
   {
@@ -63,12 +50,6 @@ const TABS = [
     buttonClassNameActive: "pixel-box--primary",
     buttonDarkClassName: "pixel-box--dark",
     buttonDarkClassNameActive: "pixel-box--primary--dark",
-    icon: (
-      <img
-        src={`${ICON_IMAGE_PATH}/AchievementSmall.png`}
-        style={{ height: "2.5rem", objectFit: "cover" }}
-      />
-    ),
     // content: <TelegramAchievement />,
   },
   {
@@ -78,15 +59,39 @@ const TABS = [
     buttonClassNameActive: "pixel-box--primary",
     buttonDarkClassName: "pixel-box--dark",
     buttonDarkClassNameActive: "pixel-box--primary--dark",
-    icon: (
-      <img
-        src={`${ICON_IMAGE_PATH}/WinCup.png`}
-        style={{ height: "2.5rem", objectFit: "cover" }}
-      />
-    ),
     // content: <TelegramTicketRank />,
   },
 ];
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  dir?: string;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      style={{
+        position: "relative",
+      }}
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography component="div">{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
 
 export function QuestTab(props: {
   // theme: Theme;
@@ -182,11 +187,16 @@ export function QuestTabContent({
   ];
 
   return (
-    <>
-      {/* {TAB_CONTENTS.map((item, index) => (
-        <React.Fragment key={`content-${index}`}>{item.content}</React.Fragment>
-      ))} */}
-      {TAB_CONTENTS[tabIndex].content}
-    </>
+    <SwipeableViews
+      axis={"x"}
+      index={tabIndex}
+      // onChangeIndex={handleChangeIndex}
+    >
+      {TAB_CONTENTS.map((tab) => (
+        <TabPanel key={tab.id} value={tabIndex} index={tab.id}>
+          {tab.content}
+        </TabPanel>
+      ))}
+    </SwipeableViews>
   );
 }

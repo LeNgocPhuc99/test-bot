@@ -36,6 +36,3 @@ export function getTelegramSupportLanguagueCode() {
   }
   return 'en';
 }
-
-//  Asset Config
-export const ICON_IMAGE_PATH = `/icons`;

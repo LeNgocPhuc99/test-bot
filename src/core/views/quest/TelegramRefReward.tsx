@@ -20,7 +20,10 @@ import ReloadDataButton from "../../components/ReloadDataButton";
 import CopyTextComponent from "../../components/CopyTextComponent";
 
 // ** Configs Import
-import { ICON_IMAGE_PATH } from "../../configs/appConfigs";
+import ticketImg from "../../../assets/icons/Ticket.png";
+import expandImg from "../../../assets/icons/ExpandLight.png";
+import usersIng from "../../../assets/icons/Users.png";
+import winCup from "../../../assets/icons/WinCup.png";
 
 import { questProgress } from "../../data";
 
@@ -59,9 +62,10 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
   };
 
   return (
-    <Box sx={{ position: "relative" }}>
-      <Box
+    <Box sx={{ width: "100%", height: "100%" }}>
+      {/* <Box
         sx={{
+          top: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
@@ -89,7 +93,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           }}
         >
           <img
-            src={`${ICON_IMAGE_PATH}/Ticket.png`}
+            src={ticketImg}
             style={{ height: "2.5rem", objectFit: "cover" }}
           />
           <Typography
@@ -103,7 +107,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={handleRefreshData} />
-      </Box>
+      </Box> */}
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
         open={isInitDataError}
@@ -128,7 +132,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           <CircularProgress color="inherit" />
         )}
       </Backdrop>
-      <Box mt="5rem">
+      <Box mt="0rem">
         {/* Current User Ticket */}
         <Box
           className={isDarkMode ? "pixel-borders--dark--2" : "pixel-borders--2"}
@@ -156,7 +160,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
             }}
           >
             <img
-              src={`${ICON_IMAGE_PATH}/Ticket.png`}
+              src={ticketImg}
               style={{ height: "1.5rem", objectFit: "cover" }}
             />
             <Typography variant="body1">{questProgress.point}</Typography>
@@ -231,7 +235,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
             expandIcon={
               <Box>
                 <img
-                  src={`${ICON_IMAGE_PATH}/ExpandLight.png`}
+                  src={expandImg}
                   style={{ width: "1.5rem", objectFit: "cover" }}
                 />
               </Box>
@@ -308,7 +312,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
                 }}
               >
                 <img
-                  src={`${ICON_IMAGE_PATH}/Users.png`}
+                  src={usersIng}
                   style={{ height: "1.75rem", objectFit: "cover" }}
                 />
                 <Typography variant="body1">
@@ -350,7 +354,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
                 }}
               >
                 <img
-                  src={`${ICON_IMAGE_PATH}/Ticket.png`}
+                  src={ticketImg}
                   style={{ height: "1.75rem", objectFit: "cover" }}
                 />
                 <Typography variant="body1">
@@ -359,95 +363,6 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
               </Box>
             </Box>
           </Grid>
-          {/* <Grid item xs={6}>
-              <Box
-                className="pixel-borders--2"
-                sx={{
-                  px: 4,
-                  py: 2,
-                  height: "100%",
-                  borderRadius: 2,
-                  bgcolor: theme.palette.background.paper,
-                  cursor: 'pointer',
-                  ":hover": {
-                    bgcolor: darken(theme.palette.background.paper, 0.1),
-                  }
-                }}
-                onClick={showRewardDetailView}
-              >
-                <Box
-                  sx={{ display: "flex", gap: 0.5, alignItems: "center" }}
-                >
-                  <Typography variant="h6">
-                    Total Reward
-                  </Typography>
-                  <IconButton
-                    className="pixel-button--light"
-                    sx={{ padding: 0 }}
-                    onClick={showRewardDetailView}
-                    size="small"
-                  >
-                    <ArrowRightIcon />
-                  </IconButton>
-                </Box>
-                <Box
-                  sx={{
-                    mt: 1,
-                    pl: 1,
-                    gap: 1,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src={IN_GAME_TOKEN_IMAGE}
-                    alt="In Game Token Image"
-                    style={{ width: "1.5rem", height: "1.5rem" }}
-                  />
-                  <Typography
-                   
-                  >
-                    {referralReward.total_reward}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-            <Grid item xs={6}>
-              <Box
-                className="pixel-borders--2"
-                sx={{
-                  px: 4,
-                  py: 2,
-                  height: "100%",
-                  borderRadius: 2,
-                  bgcolor: theme.palette.background.paper,
-                }}
-              >
-                <Typography variant="h6">
-                  Total Claim
-                </Typography>
-                <Box
-                  sx={{
-                    mt: 1,
-                    pl: 1,
-                    gap: 1,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src={IN_GAME_TOKEN_IMAGE}
-                    alt="In Game Token Image"
-                    style={{ width: "1.5rem", height: "1.5rem" }}
-                  />
-                  <Typography
-                   
-                  >
-                    {referralReward.total_claim}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid> */}
         </Grid>
         <Button
           className={
@@ -457,7 +372,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           variant="contained"
           startIcon={
             <img
-              src={`${ICON_IMAGE_PATH}/WinCup.png`}
+              src={winCup}
               style={{ height: "2.5rem", objectFit: "cover" }}
             />
           }

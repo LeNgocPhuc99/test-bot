@@ -13,7 +13,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 // ** Types Import
 import { ITelegramRewardPathInfo } from "../types/quest";
 
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
+import ticketImg from "../../assets/icons/Ticket.png"
 
 type TelegramRewardPathComponentProps = {
   pathIndex: number;
@@ -106,7 +106,7 @@ const TelegramRewardPathComponent = ({
       >
         {/* Ticket Image */}
         <img
-          src={`${ICON_IMAGE_PATH}/Ticket.png`}
+          src={ticketImg}
           style={{ height: "4rem", objectFit: "cover", margin: "0.25rem 0" }}
         />
         <Box

@@ -17,3 +17,49 @@ body {
   height: 80vh;
   font-size: 6.25rem;
 }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* xs */
+@media (min-width: 0px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* sm */
+@media (min-width: 600px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+/* md */
+@media (min-width: 900px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* lg */
+@media (min-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* lg */
+@media (min-width: 1536px) {
+  html {
+    font-size: 100%;
+  }
+}

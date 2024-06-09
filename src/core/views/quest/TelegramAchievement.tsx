@@ -15,8 +15,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ReloadDataButton from "../../components/ReloadDataButton";
 import TelegramAchievementInfoComponent from "../../components/TelegramAchievementInfoComponent";
 
-// ** Configs Import
-import { ICON_IMAGE_PATH } from "../../configs/appConfigs";
+import achievementImg from "../../../assets/icons/AchievementSmall.png";
 
 import { achievementInfos } from "../../data";
 
@@ -74,12 +73,10 @@ const TelegramAchievement = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box
-      id="telegram-achievement-tab"
-      sx={{ position: "relative" }}
-    >
-      <Box
+    <Box id="telegram-achievement-tab" sx={{ position: "relative" }}>
+      {/* <Box
         sx={{
+          top: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
@@ -108,7 +105,7 @@ const TelegramAchievement = () => {
           }}
         >
           <img
-            src={`${ICON_IMAGE_PATH}/AchievementSmall.png`}
+            src={achievementImg}
             style={{ height: "2.5rem", objectFit: "cover" }}
           />
           <Typography
@@ -122,7 +119,7 @@ const TelegramAchievement = () => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={async () => {}} />
-      </Box>
+      </Box> */}
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -148,7 +145,7 @@ const TelegramAchievement = () => {
           <CircularProgress color="inherit" />
         )}
       </Backdrop>
-      <Box pt="5rem">
+      <Box pt="0rem">
         <Box
           sx={{
             width: "100%",

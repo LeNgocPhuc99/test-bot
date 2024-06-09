@@ -8,7 +8,8 @@ import { TransitionProps } from "@mui/material/transitions";
 
 import { Theme } from "@emotion/react";
 
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
+import copyImg from "../../assets/icons/Copy.png";
+import copyCheck from "../../assets/icons/CopyCheck.png";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -52,13 +53,10 @@ export default function CopyTextComponent(props: CopyTextComponentProps) {
         onClick={handleClick}
       >
         {!copied ? (
-          <img
-            src={`${ICON_IMAGE_PATH}/Copy.png`}
-            style={{ width: "1.25rem", objectFit: "cover" }}
-          />
+          <img src={copyImg} style={{ width: "1.25rem", objectFit: "cover" }} />
         ) : (
           <img
-            src={`${ICON_IMAGE_PATH}/CopyCheck.png`}
+            src={copyCheck}
             style={{ width: "1.25rem", objectFit: "cover" }}
           />
         )}

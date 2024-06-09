@@ -14,8 +14,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 // ** Types Import
 import { ITelegramQuest } from "../types/quest";
 
-// ** Config Import
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
+import ticketImg from "../../assets/icons/Ticket.png";
+import checkImg from "../../assets/icons/Check.png";
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -97,7 +97,7 @@ const TelegramQuestCard = ({ quest }: Props) => {
             }}
           >
             <img
-              src={`${ICON_IMAGE_PATH}/Ticket.png`}
+              src={ticketImg}
               style={{ height: "1rem", objectFit: "cover" }}
             />
             <Typography variant="body2">{quest.point}</Typography>
@@ -120,7 +120,7 @@ const TelegramQuestCard = ({ quest }: Props) => {
             }}
           >
             <img
-              src={`${ICON_IMAGE_PATH}/Check.png`}
+              src={checkImg}
               style={{ height: "1.25rem", objectFit: "cover" }}
             />
             <Typography variant="h6">

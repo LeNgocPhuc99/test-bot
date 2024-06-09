@@ -18,7 +18,12 @@ import ReloadDataButton from "../../components/ReloadDataButton";
 import LeaderboardRankRow from "../../components/LeaderboardRankRow";
 
 // ** Configs Import
-import { ICON_IMAGE_PATH } from "../../configs/appConfigs";
+import goldImg from "../../../assets/icons/Gold.png";
+import silverImg from "../../../assets/icons/Silver.png";
+import bronzeImg from "../../../assets/icons/Bronze.png";
+import winCup from "../../../assets/icons/WinCup.png";
+import usersImg from "../../../assets/icons/Users.png";
+import ticketImg from "../../../assets/icons/Ticket.png";
 
 import { leaderboardInfo } from "../../data";
 
@@ -79,11 +84,11 @@ const TelegramTicketRank = () => {
     if (leaderboardInfo) {
       switch (leaderboardInfo.rank) {
         case 1:
-          return `${ICON_IMAGE_PATH}/Gold.png`;
+          return goldImg;
         case 2:
-          return `${ICON_IMAGE_PATH}/Silver.png`;
+          return silverImg;
         case 3:
-          return `${ICON_IMAGE_PATH}/Bronze.png`;
+          return bronzeImg;
         default:
           return "";
       }
@@ -95,12 +100,10 @@ const TelegramTicketRank = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box
-      id="telegram-ticket-rank-tab"
-      sx={{ position: "relative" }}
-    >
-      <Box
+    <Box id="telegram-ticket-rank-tab" sx={{ position: "relative" }}>
+      {/* <Box
         sx={{
+          top: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
@@ -128,10 +131,7 @@ const TelegramTicketRank = () => {
             p: { xs: "0.25rem", sm: "0.5rem", md: "0.75rem" },
           }}
         >
-          <img
-            src={`${ICON_IMAGE_PATH}/WinCup.png`}
-            style={{ height: "2.5rem", objectFit: "cover" }}
-          />
+          <img src={winCup} style={{ height: "2.5rem", objectFit: "cover" }} />
           <Typography
             variant="h4"
             sx={{
@@ -143,7 +143,7 @@ const TelegramTicketRank = () => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={async () => {}} />
-      </Box>
+      </Box> */}
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -170,7 +170,7 @@ const TelegramTicketRank = () => {
         )}
       </Backdrop>
 
-      <Box mt="5rem">
+      <Box mt="0rem">
         {leaderboardInfo ? (
           <>
             {/* Summary Info */}
@@ -209,7 +209,7 @@ const TelegramTicketRank = () => {
                     }}
                   >
                     <img
-                      src={`${ICON_IMAGE_PATH}/Ticket.png`}
+                      src={ticketImg}
                       style={{ height: "1.5rem", objectFit: "cover" }}
                     />
                     <Typography variant="body1">
@@ -252,7 +252,7 @@ const TelegramTicketRank = () => {
                     }}
                   >
                     <img
-                      src={`${ICON_IMAGE_PATH}/Users.png`}
+                      src={usersImg}
                       style={{ height: "1.5rem", objectFit: "cover" }}
                     />
                     <Typography variant="body1">
@@ -329,7 +329,7 @@ const TelegramTicketRank = () => {
                 sx={{ display: "flex", gap: "0.25rem", alignItems: "center" }}
               >
                 <img
-                  src={`${ICON_IMAGE_PATH}/Ticket.png`}
+                  src={ticketImg}
                   style={{ height: "1.25rem", objectFit: "cover" }}
                 />
                 <Typography>{leaderboardInfo.quest_point}</Typography>

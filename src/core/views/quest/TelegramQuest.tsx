@@ -18,8 +18,7 @@ import TelegramQuestCard from "../../components/TelegramQuestCard";
 // ** Types Import
 import { ITelegramQuest } from "../../types/quest";
 
-// ** Configs Import
-import { ICON_IMAGE_PATH } from "../../configs/appConfigs";
+import questImg from "../../../assets/icons/QuestSmall.png";
 
 import { questList } from "../../data";
 
@@ -162,12 +161,10 @@ const TelegramQuest = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box
-      id="telegram-quest-tab"
-      sx={{ position: "relative" }}
-    >
-      <Box
+    <Box id="telegram-quest-tab" sx={{ position: "relative" }}>
+      {/* <Box
         sx={{
+          top: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
@@ -193,7 +190,7 @@ const TelegramQuest = () => {
           }}
         >
           <img
-            src={`${ICON_IMAGE_PATH}/QuestSmall.png`}
+            src={questImg}
             style={{ height: "2.5rem", objectFit: "cover" }}
           />
           <Typography
@@ -206,7 +203,7 @@ const TelegramQuest = () => {
             {t("TelegramQuest|title")}
           </Typography>
         </Box>
-      </Box>
+      </Box> */}
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -233,7 +230,7 @@ const TelegramQuest = () => {
         )}
       </Backdrop>
 
-      <Box mt="5rem">
+      <Box mt="0rem">
         {/* Daily Quest Section */}
         <Box sx={{ mb: "0.5rem" }}>
           <Typography

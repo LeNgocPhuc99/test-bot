@@ -12,8 +12,10 @@ import { leaderboardInfo } from "../data";
 // ** Types Import
 import { ITelegramUserRank } from "../types/quest";
 
-// ** Config Import
-import { ICON_IMAGE_PATH } from "../configs/appConfigs";
+import goldImg from "../../assets/icons/Gold.png";
+import silverImg from "../../assets/icons/Silver.png";
+import bronzeImg from "../../assets/icons/Bronze.png";
+import ticketImg from "../../assets/icons/Ticket.png";
 
 type LeaderboardRankRowProps = {
   userRank: ITelegramUserRank;
@@ -27,13 +29,13 @@ const LeaderboardRankRow = ({ userRank }: LeaderboardRankRowProps) => {
     if (userRank) {
       switch (userRank.rank) {
         case 1:
-          return `${ICON_IMAGE_PATH}/Gold.png`;
+          return goldImg;
         case 2:
-          return `${ICON_IMAGE_PATH}/Silver.png`;
+          return silverImg;
         case 3:
-          return `${ICON_IMAGE_PATH}/Bronze.png`;
+          return bronzeImg;
         default:
-          return ''
+          return "";
       }
     }
 
@@ -42,7 +44,7 @@ const LeaderboardRankRow = ({ userRank }: LeaderboardRankRowProps) => {
 
   // ** Hooks
   const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark'
+  const isDarkMode = theme.palette.mode === "dark";
 
   // ** Context
   // const { leaderboardInfo } = useQuestContext();
@@ -64,7 +66,7 @@ const LeaderboardRankRow = ({ userRank }: LeaderboardRankRowProps) => {
         display: "flex",
         alignItems: "center",
         borderRadius: "0.5rem",
-        bgcolor: 'transparent',
+        bgcolor: "transparent",
         justifyContent: "space-between",
       }}
     >
@@ -77,7 +79,7 @@ const LeaderboardRankRow = ({ userRank }: LeaderboardRankRowProps) => {
         }}
       >
         {imagePath ? (
-          <img src={imagePath} style={{width: '3rem', objectFit: 'cover'}} />
+          <img src={imagePath} style={{ width: "3rem", objectFit: "cover" }} />
         ) : (
           <Typography
             sx={{
@@ -94,12 +96,14 @@ const LeaderboardRankRow = ({ userRank }: LeaderboardRankRowProps) => {
             justifyContent: "center",
           }}
         >
-          <Typography sx={{color: theme.palette.primary.main}}>{userRank.username}</Typography>
+          <Typography sx={{ color: theme.palette.primary.main }}>
+            {userRank.username}
+          </Typography>
         </Box>
       </Box>
       <Box sx={{ display: "flex", gap: "0.25rem", alignItems: "center" }}>
         <img
-          src={`${ICON_IMAGE_PATH}/Ticket.png`}
+          src={ticketImg}
           style={{ height: "1.25rem", objectFit: "cover" }}
         />
         <Typography>

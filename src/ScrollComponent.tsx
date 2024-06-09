@@ -24,7 +24,7 @@ const ScrollComponent = () => {
       }
     }
 
-    // setupDocument(true);
+    setupDocument(true);
 
     const scrollableEl = document.getElementById("scrollable-el");
     let ts: number | undefined;

@@ -7,11 +7,12 @@ import { useTranslation } from "react-i18next";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import BottomNavigation from "@mui/material/BottomNavigation";
 
 import { TabEnum, QuestTab, QuestTabContent } from "../core/pages/QuestPage";
 
-import ScrollComponent from "../ScrollComponent";
+import questImg from "../assets/icons/QuestSmall.png";
 
 const QuestPage = ({
   tabIndex,
@@ -51,18 +52,18 @@ const QuestPage = ({
     };
     const onTouchMove = (e: TouchEvent) => {
       if (scrollableEl) {
-        console.warn("onTouchMove");
+        // console.warn("onTouchMove");
         const scroll = scrollableEl.scrollTop;
         const te = e.changedTouches[0].clientY;
         if (scroll <= 0 && ts! < te) {
-          if(e.cancelable) {
+          if (e.cancelable) {
             e.preventDefault();
           }
         }
       } else {
-       if(e.cancelable) {
-        e.preventDefault();
-       }
+        if (e.cancelable) {
+          e.preventDefault();
+        }
       }
     };
     document.documentElement.addEventListener("touchstart", onTouchStart, {

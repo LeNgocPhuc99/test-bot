@@ -58,17 +58,18 @@ const TelegramTicketRank = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box id="telegram-ticket-rank-tab" sx={{ position: "relative" }}>
-      {/* <Box
+    <>
+      <Box
         sx={{
           top: 0,
+          left: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
           width: "100%",
           gap: "0.5rem",
           display: "flex",
-          position: "fixed",
+          position: 'sticky',
           alignItems: "center",
           backdropFilter: "blur(0.5rem)",
           backgroundColor: "transparent",
@@ -101,7 +102,7 @@ const TelegramTicketRank = () => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={async () => {}} />
-      </Box> */}
+      </Box>
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -128,7 +129,7 @@ const TelegramTicketRank = () => {
         )}
       </Backdrop>
 
-      <Box mt="0rem">
+      <Box mt="1rem">
         {leaderboardInfo ? (
           <>
             {/* Summary Info */}
@@ -318,7 +319,7 @@ const TelegramTicketRank = () => {
           </Typography>
         )}
       </Box>
-    </Box>
+    </>
   );
 };
 

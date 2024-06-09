@@ -31,17 +31,18 @@ const TelegramAchievement = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box id="telegram-achievement-tab" sx={{ position: "relative" }}>
-      {/* <Box
+    <>
+      <Box
         sx={{
           top: 0,
+          left: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
           width: "100%",
           gap: "0.5rem",
           display: "flex",
-          position: "fixed",
+          position: 'sticky',
           alignItems: "center",
           backdropFilter: "blur(0.5rem)",
           backgroundColor: "transparent",
@@ -77,7 +78,7 @@ const TelegramAchievement = () => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={async () => {}} />
-      </Box> */}
+      </Box>
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -103,7 +104,7 @@ const TelegramAchievement = () => {
           <CircularProgress color="inherit" />
         )}
       </Backdrop>
-      <Box pt="0rem">
+      <Box pt="1rem">
         <Box
           sx={{
             width: "100%",
@@ -133,7 +134,7 @@ const TelegramAchievement = () => {
           )}
         </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

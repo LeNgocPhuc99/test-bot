@@ -119,15 +119,16 @@ const TelegramQuest = () => {
   const handleReloadWhenError = async () => {};
 
   return (
-    <Box id="telegram-quest-tab" sx={{ position: "relative" }}>
-      {/* <Box
+    <>
+      <Box
         sx={{
           top: 0,
+          left: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
           width: "100%",
-          position: "fixed",
+          position: 'sticky',
           backdropFilter: "blur(0.5rem)",
           backgroundColor: "transparent",
         }}
@@ -161,7 +162,7 @@ const TelegramQuest = () => {
             {t("TelegramQuest|title")}
           </Typography>
         </Box>
-      </Box> */}
+      </Box>
 
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
@@ -188,7 +189,7 @@ const TelegramQuest = () => {
         )}
       </Backdrop>
 
-      <Box mt="0rem">
+      <Box mt="1rem">
         {/* Daily Quest Section */}
         <Box sx={{ mb: "0.5rem" }}>
           <Typography
@@ -235,7 +236,7 @@ const TelegramQuest = () => {
         </Box>
         <PartnerQuest quests={questList.partner_quest} />
       </Box>
-    </Box>
+    </>
   );
 };
 

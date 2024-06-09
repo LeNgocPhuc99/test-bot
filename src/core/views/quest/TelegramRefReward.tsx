@@ -62,17 +62,18 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
   };
 
   return (
-    <Box sx={{ width: "100%", height: "100%" }}>
-      {/* <Box
+    <>
+      <Box
         sx={{
           top: 0,
+          left: 0,
           zIndex: 10,
           p: "0.25rem",
           mb: "0.25rem",
           width: "100%",
           gap: "0.5rem",
           display: "flex",
-          position: "fixed",
+          position: "sticky",
           alignItems: "center",
           backdropFilter: "blur(0.5rem)",
           backgroundColor: "transparent",
@@ -107,7 +108,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={handleRefreshData} />
-      </Box> */}
+      </Box>
       {/* Refresh Backdrop When Init Data Fail */}
       <Backdrop
         open={isInitDataError}
@@ -132,7 +133,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           <CircularProgress color="inherit" />
         )}
       </Backdrop>
-      <Box mt="0rem">
+      <Box mt="1rem">
         {/* Current User Ticket */}
         <Box
           className={isDarkMode ? "pixel-borders--dark--2" : "pixel-borders--2"}
@@ -390,7 +391,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
           </Typography>
         </Button>
       </Box>
-    </Box>
+    </>
   );
 };
 

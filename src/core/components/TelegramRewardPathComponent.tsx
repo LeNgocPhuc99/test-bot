@@ -119,7 +119,7 @@ const TelegramRewardPathComponent = ({
           }}
         >
           <img
-            src={`/icons/Ticket.png`}
+            src={ticketImg}
             style={{ height: "1.5rem", objectFit: "cover" }}
           />
           <Typography color="text.primary">

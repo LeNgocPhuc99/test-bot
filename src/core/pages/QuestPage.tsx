@@ -3,8 +3,6 @@ import React, { useState, useCallback, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import SwipeableViews from "react-swipeable-views";
-
 // ** MUI Import
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -187,16 +185,11 @@ export function QuestTabContent({
   ];
 
   return (
-    <SwipeableViews
-      axis={"x"}
-      index={tabIndex}
-      // onChangeIndex={handleChangeIndex}
-    >
-      {TAB_CONTENTS.map((tab) => (
-        <TabPanel key={tab.id} value={tabIndex} index={tab.id}>
-          {tab.content}
-        </TabPanel>
-      ))}
-    </SwipeableViews>
+    <>
+      {/* {TAB_CONTENTS.map((item, index) => (
+        <React.Fragment key={`content-${index}`}>{item.content}</React.Fragment>
+      ))} */}
+      {TAB_CONTENTS[tabIndex].content}
+    </>
   );
 }

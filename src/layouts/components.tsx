@@ -28,9 +28,9 @@ const QuestPage = ({
   useEffect(() => {
     if (window.tgAppInitiated) return;
     window.tgAppInitiated = true;
-    // const scrollableEl = document.getElementById("scrollable-el");
-    const overflow = 100;
+    console.log("Init Tg");
 
+    const overflow = 100;
     function setupDocument(enable: boolean) {
       if (enable) {
         document.body.style.marginTop = `${overflow}px`;
@@ -45,16 +45,55 @@ const QuestPage = ({
       }
     }
 
-    // setupDocument(true);
+    setupDocument(true);
+
+    const scrollableEl = document.getElementById("scrollable-el");
+    let ts: number | undefined;
+    const onTouchStart = (e: TouchEvent) => {
+      ts = e.touches[0].clientY;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (scrollableEl) {
+        console.warn("onTouchMove");
+        const scroll = scrollableEl.scrollTop;
+        const te = e.changedTouches[0].clientY;
+        if (scroll <= 0 && ts! < te) {
+          e.preventDefault();
+        }
+      } else {
+        e.preventDefault();
+      }
+    };
+    document.documentElement.addEventListener("touchstart", onTouchStart, {
+      passive: false,
+    });
+    document.documentElement.addEventListener("touchmove", onTouchMove, {
+      passive: false,
+    });
+
+    const onScroll = () => {
+      if (window.scrollY < overflow) {
+        window.scrollTo(0, overflow);
+        if (scrollableEl) {
+          scrollableEl.scrollTo(0, 0);
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // authorize here
 
     return () => {
       setupDocument(false);
+      document.documentElement.removeEventListener("touchstart", onTouchStart);
+      document.documentElement.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
-
   return (
     <>
       <Box
+        id="scrollable-el"
         className="pixel-dialog--dark--2"
         sx={{
           alignContent: "center",
@@ -64,8 +103,8 @@ const QuestPage = ({
           backgroundColor: "rgba(0 0 0 / 75%) !important",
           height: "80vh",
           // borderColor: "#000000 !important",
-          overflowY: 'scroll'
-
+          overflowY: "scroll",
+          overflowX: "auto",
         }}
       >
         <QuestTabContent

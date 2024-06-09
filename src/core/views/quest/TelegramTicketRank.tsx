@@ -97,7 +97,7 @@ const TelegramTicketRank = () => {
   return (
     <Box
       id="telegram-ticket-rank-tab"
-      sx={{ position: "relative", overflowX: "auto", overflowY: "scroll" }}
+      sx={{ position: "relative" }}
     >
       <Box
         sx={{

@@ -164,7 +164,7 @@ const TelegramQuest = () => {
   return (
     <Box
       id="telegram-quest-tab"
-      sx={{ position: "relative", overflowX: "auto", overflowY: "scroll" }}
+      sx={{ position: "relative" }}
     >
       <Box
         sx={{

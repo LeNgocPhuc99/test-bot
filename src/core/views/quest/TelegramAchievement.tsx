@@ -76,7 +76,7 @@ const TelegramAchievement = () => {
   return (
     <Box
       id="telegram-achievement-tab"
-      sx={{ position: "relative", overflowX: "auto", overflowY: "scroll" }}
+      sx={{ position: "relative" }}
     >
       <Box
         sx={{

@@ -98,7 +98,7 @@
 }
 
 .pixel-dialog--dark--2 {
-  @include pixel-box($corner-size: 2, $border-size: 0.4rem, $background-color: #191919, $border-color: #00ffa3, $border-inset-color: rgba(0 255 163 / 15%), $border-inset-sides: 'bottom-right', $border-radius: 2rem);
+  @include pixel-box($corner-size: 2, $border-size: 0.4rem, $background-color: #191919, $border-color: #00ffa3, $border-inset: false, $border-radius: 2rem);
 }
 
 .pixel-borders--dark--2 {

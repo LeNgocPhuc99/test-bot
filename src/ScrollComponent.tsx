@@ -1,4 +1,6 @@
+import { Box } from "@mui/material";
 import { useEffect } from "react";
+import TelegramQuest from "./core/views/quest/TelegramQuest";
 
 const tg = Telegram.WebApp;
 
@@ -71,71 +73,22 @@ const ScrollComponent = () => {
   }, []);
 
   return (
-    <div>
-      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.12</p>
-      <div id="scrollable-el" className="scrollable-element">
-        <div>
-          <p style={{ color: "blue" }}>Item 1</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 2</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 3</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 4</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 5</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 6</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 7</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 8</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 9</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 10</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 11</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 12</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 13</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 14</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 15</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 16</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 17</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 18</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 19</p>
-        </div>
-        <div>
-          <p style={{ color: "blue" }}>Item 20</p>
-        </div>
-      </div>
-    </div>
+    <Box
+      id="scrollable-el"
+      className="pixel-dialog--dark--2"
+      sx={{
+        marginBottom: "3.2rem",
+        padding: "1.5rem",
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgba(0 0 0 / 75%) !important",
+        height: "80vh",
+        // borderColor: "#000000 !important",
+        overflowY: "scroll",
+        // overflowX: "auto",
+      }}
+    >
+      <TelegramQuest />
+    </Box>
   );
 };
 

@@ -11,6 +11,7 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 
 import { TabEnum, QuestTab, QuestTabContent } from "../core/pages/QuestPage";
 
+import ScrollComponent from "../ScrollComponent";
 
 const QuestPage = ({
   tabIndex,
@@ -86,6 +87,7 @@ const QuestPage = ({
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
   return (
     <>
       <Box
@@ -111,7 +113,7 @@ const QuestPage = ({
   );
 };
 
-import bgImage from '../assets/static/memetd/background.png'
+import bgImage from "../assets/static/memetd/background.png";
 
 export const QuestPageWrapper = () => {
   const [tabIndex, setTabIndex] = useState<number>(TabEnum.TICKET);
@@ -188,6 +190,7 @@ export const QuestPageWrapper = () => {
               tabIndex={tabIndex}
               handleMoveToRank={handleMoveToRank}
             />
+            {/* <ScrollComponent /> */}
           </Container>
         </Box>
         <img

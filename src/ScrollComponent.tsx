@@ -63,7 +63,7 @@ const ScrollComponent = () => {
     // authorize here
 
     return () => {
-      // setupDocument(false);
+      setupDocument(false);
       document.documentElement.removeEventListener("touchstart", onTouchStart);
       document.documentElement.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("scroll", onScroll);
@@ -72,7 +72,7 @@ const ScrollComponent = () => {
 
   return (
     <div>
-      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.11</p>
+      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.12</p>
       <div id="scrollable-el" className="scrollable-element">
         <div>
           <p style={{ color: "blue" }}>Item 1</p>

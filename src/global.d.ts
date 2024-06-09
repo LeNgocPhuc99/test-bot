@@ -1,3 +1,3 @@
 interface Window {
-    tgAppInited: boolean
+    tgAppInitiated: boolean
 }

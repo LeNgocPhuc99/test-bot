@@ -1,8 +1,31 @@
 import { useEffect } from "react";
 
+const tg = Telegram.WebApp;
+
 const ScrollComponent = () => {
   useEffect(() => {
+    if (!tg) return;
+    if (window.tgAppInitiated) return;
+    window.tgAppInitiated = true;
+    console.log("Init Tg");
+    tg.expand();
     const overflow = 100;
+    function setupDocument(enable: boolean) {
+      if (enable) {
+        document.body.style.marginTop = `${overflow}px`;
+        document.body.style.height = window.innerHeight + overflow + "px";
+        document.body.style.paddingBottom = `${overflow}px`;
+        window.scrollTo(0, overflow);
+      } else {
+        document.body.style.removeProperty("marginTop");
+        document.body.style.removeProperty("height");
+        document.body.style.removeProperty("paddingBottom");
+        window.scrollTo(0, 0);
+      }
+    }
+
+    // setupDocument(true);
+
     const scrollableEl = document.getElementById("scrollable-el");
     let ts: number | undefined;
     const onTouchStart = (e: TouchEvent) => {
@@ -46,68 +69,71 @@ const ScrollComponent = () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
-  
+
   return (
-    <div id="scrollable-el" className="scrollable-element">
-      <div>
-        <p style={{ color: "blue" }}>Item 1</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 2</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 3</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 4</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 5</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 6</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 7</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 8</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 9</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 10</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 11</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 12</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 13</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 14</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 15</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 16</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 17</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 18</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 19</p>
-      </div>
-      <div>
-        <p style={{ color: "blue" }}>Item 20</p>
+    <div>
+      <p style={{ textAlign: "center", color: "red" }}>Demo bot 1.0.10</p>
+      <div id="scrollable-el" className="scrollable-element">
+        <div>
+          <p style={{ color: "blue" }}>Item 1</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 2</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 3</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 4</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 5</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 6</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 7</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 8</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 9</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 10</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 11</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 12</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 13</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 14</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 15</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 16</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 17</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 18</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 19</p>
+        </div>
+        <div>
+          <p style={{ color: "blue" }}>Item 20</p>
+        </div>
       </div>
     </div>
   );

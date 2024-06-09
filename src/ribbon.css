@@ -1,0 +1,299 @@
+/* https://css-generators.com/ribbon-shapes/ */
+.ribbon--1 {
+    --s: 1.8em;
+    /* the ribbon size */
+    --d: .8em;
+    /* the depth */
+    --c: .8em;
+    /* the cutout part */
+
+    padding: 0 calc(var(--s) + .5em) var(--d);
+    line-height: 1.8;
+    background:
+        conic-gradient(at left var(--s) bottom var(--d),
+            #0000 25%, #0008 0 37.5%, #0004 0) 0 /50% 100% no-repeat,
+        conic-gradient(at right var(--s) bottom var(--d),
+            #0004 62.5%, #0008 0 75%, #0000 0) 100%/50% 100% no-repeat;
+    clip-path: polygon(0 var(--d), var(--s) var(--d), var(--s) 0, calc(100% - var(--s)) 0, calc(100% - var(--s)) var(--d), 100% var(--d), calc(100% - var(--c)) calc(50% + var(--d)/2), 100% 100%, calc(100% - var(--s) - var(--d)) 100%, calc(100% - var(--s) - var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) 100%, 0 100%, var(--c) calc(50% + var(--d)/2));
+    background-color: #CC333F;
+    /* the main color */
+    width: fit-content;
+}
+
+.ribbon--2 {
+    --s: 1.8em;
+    /* the ribbon size */
+    --d: .8em;
+    /* the depth */
+    --c: .8em;
+    /* the cutout part */
+
+    padding: var(--d) calc(var(--s) + .5em) 0;
+    line-height: 1.8;
+    background:
+        conic-gradient(from 45deg at left var(--s) top var(--d),
+            #0008 12.5%, #0000 0 37.5%, #0004 0) 0 /50% 100% no-repeat,
+        conic-gradient(from -45deg at right var(--s) top var(--d),
+            #0004 62.5%, #0000 0 87.5%, #0008 0) 100%/50% 100% no-repeat;
+    clip-path: polygon(0 0, calc(var(--s) + var(--d)) 0, calc(var(--s) + var(--d)) var(--d), calc(100% - var(--s) - var(--d)) var(--d), calc(100% - var(--s) - var(--d)) 0, 100% 0, calc(100% - var(--c)) calc(50% - var(--d)/2), 100% calc(100% - var(--d)), calc(100% - var(--s)) calc(100% - var(--d)), calc(100% - var(--s)) 100%, var(--s) 100%, var(--s) calc(100% - var(--d)), 0 calc(100% - var(--d)), var(--c) calc(50% - var(--d)/2));
+    background-color: #D95B43;
+    /* the main color */
+    width: fit-content;
+}
+
+.ribbon--3 {
+    --d: .8em;
+    /* the depth */
+
+    /* position: absolute; */
+    /* top: 20px; */
+    inset-inline: calc(-1*var(--d));
+    border-bottom: var(--d) solid #0008;
+    line-height: 1.8;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--d)), calc(100% - var(--d)) 100%, calc(100% - var(--d)) calc(100% - var(--d)), var(--d) calc(100% - var(--d)), var(--d) 100%, 0 calc(100% - var(--d)));
+    background-color: #3FB8AF;
+    /* the main color */
+}
+
+.ribbon--4 {
+    --d: .8em;
+    /* the depth */
+
+    /* position: absolute;
+    bottom: 20px; */
+    inset-inline: calc(-1*var(--d));
+    border-top: var(--d) solid #0008;
+    line-height: 1.8;
+    clip-path: polygon(0 100%, 100% 100%, 100% var(--d), calc(100% - var(--d)) 0%, calc(100% - var(--d)) var(--d), var(--d) var(--d), var(--d) 0%, 0 var(--d));
+    background-color: #8FBE00;
+    /* the main color */
+}
+
+.ribbon--5 {
+    --f: .5em;
+    /* control the folded part */
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1.8;
+    padding-inline: 1lh;
+    padding-bottom: var(--f);
+    border-image: conic-gradient(#0008 0 0) 51%/var(--f);
+    clip-path: polygon(100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+    transform: translate(calc((1 - cos(45deg))*100%), -100%) rotate(45deg);
+    transform-origin: 0% 100%;
+    background-color: #BD1550;
+    /* the main color  */
+}
+
+.ribbon--6 {
+    --f: .5em;
+    /* control the folded part */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1.8;
+    padding-inline: 1lh;
+    padding-bottom: var(--f);
+    border-image: conic-gradient(#0008 0 0) 51%/var(--f);
+    clip-path: polygon(100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+    transform: translate(calc((cos(45deg) - 1)*100%), -100%) rotate(-45deg);
+    transform-origin: 100% 100%;
+    background-color: #f01823;
+    /* the main color  */
+}
+
+.ribbon--7 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    left: 20px;
+    top: calc(-1*var(--f));
+    padding: .2em;
+    background: #BF4D28;
+    border-left: var(--f) solid #0005;
+    border-bottom: var(--r) solid #0000;
+    clip-path: polygon(var(--f) 0, 100% 0, 100% 100%, calc(50% + var(--f)/2) calc(100% - var(--r)), var(--f) 100%, var(--f) var(--f), 0 var(--f));
+}
+
+
+.ribbon--8 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    left: 20px;
+    top: calc(-1*var(--f));
+    padding: .2em;
+    background: #BF4D28;
+    border-left: var(--f) solid #0005;
+    border-bottom: var(--r) solid #0000;
+    clip-path: polygon(var(--f) 0, 100% 0, 100% calc(100% - var(--r)), calc(50% + var(--f)/2) 100%, var(--f) calc(100% - var(--r)), var(--f) var(--f), 0 var(--f));
+}
+
+.ribbon--9 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    right: 20px;
+    top: calc(-1*var(--f));
+    padding: .2em;
+    background: #C8CF02;
+    border-right: var(--f) solid #0005;
+    border-bottom: var(--r) solid #0000;
+    clip-path: polygon(calc(100% - var(--f)) 0, 0 0, 0 100%, calc(50% - var(--f)/2) calc(100% - var(--r)), calc(100% - var(--f)) 100%, calc(100% - var(--f)) var(--f), 100% var(--f));
+}
+
+.ribbon--10 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    right: 20px;
+    top: calc(-1*var(--f));
+    padding: .2em;
+    background: #C8CF02;
+    border-right: var(--f) solid #0005;
+    border-bottom: var(--r) solid #0000;
+    clip-path: polygon(calc(100% - var(--f)) 0, 0 0, 0 calc(100% - var(--r)), calc(50% - var(--f)/2) 100%, calc(100% - var(--f)) calc(100% - var(--r)), calc(100% - var(--f)) var(--f), 100% var(--f));
+}
+
+.ribbon--11 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    top: 20px;
+    right: calc(-1*var(--f));
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #FA6900;
+    border-bottom: var(--f) solid #0005;
+    border-left: var(--r) solid #0000;
+    clip-path:
+        polygon(0 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%,
+            calc(100% - var(--f)) calc(100% - var(--f)), 0 calc(100% - var(--f)),
+            var(--r) calc(50% - var(--f)/2));
+}
+
+.ribbon--12 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    top: 20px;
+    right: calc(-1*var(--f));
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #FA6900;
+    border-bottom: var(--f) solid #0005;
+    border-left: var(--r) solid #0000;
+    clip-path:
+        polygon(var(--r) 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%,
+            calc(100% - var(--f)) calc(100% - var(--f)), var(--r) calc(100% - var(--f)),
+            0 calc(50% - var(--f)/2));
+}
+
+.ribbon--13 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    bottom: 20px;
+    right: calc(-1*var(--f));
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #2699dc;
+    border-top: var(--f) solid #0005;
+    border-left: var(--r) solid #0000;
+    clip-path:
+        polygon(0 100%, 100% 100%, 100% var(--f), calc(100% - var(--f)) 0,
+            calc(100% - var(--f)) var(--f), 0 var(--f),
+            var(--r) calc(50% + var(--f)/2));
+}
+
+.ribbon--14 {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .8em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    bottom: 20px;
+    right: calc(-1*var(--f));
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #2699dc;
+    border-top: var(--f) solid #0005;
+    border-left: var(--r) solid #0000;
+    clip-path:
+        polygon(var(--r) 100%, 100% 100%, 100% var(--f), calc(100% - var(--f)) 0,
+            calc(100% - var(--f)) var(--f), var(--r) var(--f),
+            0 calc(50% + var(--f)/2));
+}
+
+.ribbon--19 {
+    --r: .8rem;
+    /* control the ribbon shape */
+
+    padding-inline: calc(var(--r) + .3rem);
+    line-height: 1.8;
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--r)) 50%, 100% 100%, 0 100%, var(--r) 50%);
+    background: #CC333F;
+    /* the main color */
+    width: fit-content;
+}
+
+.ribbon--26 {
+    --r: .4em;
+    /* control the ribbon shape (the radius) */
+    --c: #FA6900;
+
+    position: absolute;
+    top: 20px;
+    left: calc(-1*var(--r));
+    line-height: 1.8;
+    padding: 0 .5em calc(2*var(--r));
+    border-radius: var(--r) 0 0 var(--r);
+    background:
+        radial-gradient(100% 50% at left, var(--c) 98%, #0000 101%) 100% 0/.5lh calc(100% - 2*var(--r)),
+        radial-gradient(100% 50% at right, #0005 98%, #0000 101%) 0 100%/var(--r) calc(2*var(--r)),
+        conic-gradient(from 90deg at var(--r) calc(100% - 2*var(--r)), #0000 25%, var(--c) 0) 0 0/calc(101% - .5lh) 100%;
+    background-repeat: no-repeat;
+}
+
+.ribbon--30 {
+    --r: .4em;
+    /* control the ribbon shape (the radius) */
+
+    position: absolute;
+    top: 20px;
+    inset-inline: calc(-1*var(--r));
+    text-align: center;
+    line-height: 1.8;
+    padding: 0 .5em calc(2*var(--r));
+    border-radius: var(--r);
+    --_g: 100%/var(--r) calc(2*var(--r)) no-repeat;
+    background:
+        radial-gradient(100% 50% at right, #0005 98%, #0000 101%) 0 var(--_g),
+        radial-gradient(100% 50% at left, #0005 98%, #0000 101%) 100% var(--_g),
+        conic-gradient(from 90deg at var(--r) calc(100% - 2*var(--r)), #0000 25%, #3FB8AF 0) 0 0/calc(100% - var(--r)) 100%;
+}

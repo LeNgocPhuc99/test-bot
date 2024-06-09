@@ -55,10 +55,14 @@ const QuestPage = ({
         const scroll = scrollableEl.scrollTop;
         const te = e.changedTouches[0].clientY;
         if (scroll <= 0 && ts! < te) {
-          e.preventDefault();
+          if(e.cancelable) {
+            e.preventDefault();
+          }
         }
       } else {
+       if(e.cancelable) {
         e.preventDefault();
+       }
       }
     };
     document.documentElement.addEventListener("touchstart", onTouchStart, {

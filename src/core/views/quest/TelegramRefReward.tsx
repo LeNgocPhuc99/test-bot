@@ -104,7 +104,7 @@ const TelegramRefReward = ({ handleMoveToRank }: TelegramRefRewardProps) => {
               fontSize: { xs: "0.938rem", sm: "1.375rem", md: "1.875rem" },
             }}
           >
-            {t("TelegramRefReward|title")} test
+            {t("TelegramRefReward|title")}
           </Typography>
         </Box>
         <ReloadDataButton reloadFunction={handleRefreshData} />

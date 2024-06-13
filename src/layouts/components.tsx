@@ -43,7 +43,7 @@ const QuestPage = ({
       }
     }
 
-    // setupDocument(true);
+    setupDocument(true);
 
     const scrollableEl = document.getElementById("scrollable-el");
     let ts: number | undefined;
@@ -86,7 +86,7 @@ const QuestPage = ({
     // authorize here
 
     return () => {
-      // setupDocument(false);
+      setupDocument(false);
       document.documentElement.removeEventListener("touchstart", onTouchStart);
       document.documentElement.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("scroll", onScroll);

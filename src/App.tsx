@@ -24,7 +24,7 @@ function App() {
           background: "rgb(0 0 0 / 70%);",
         }}
       >
-        v2.0.1
+        v2.0.2
       </Typography>
       <QuestPageWrapper />
       );

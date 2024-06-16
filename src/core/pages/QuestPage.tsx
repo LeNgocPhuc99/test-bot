@@ -1,5 +1,5 @@
 // ** React Import
-import React, { useState, useCallback, useEffect } from "react";
+import { Fragment, ReactNode } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -61,35 +61,24 @@ const TABS = [
   },
 ];
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  dir?: string;
+type TabPanelProps = {
+  children: ReactNode;
   index: number;
-  value: number;
-}
+  activeTab: number;
+};
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
+const TabPanel = ({ children, index, activeTab }: TabPanelProps) => {
   return (
     <div
-      style={{
-        position: "relative",
-      }}
+      id={`tabpanel-${index}`}
       role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
+      hidden={activeTab !== index}
+      aria-labelledby={`tab-${index}`}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography component="div">{children}</Typography>
-        </Box>
-      )}
+      {activeTab === index && <Fragment>{children}</Fragment>}
     </div>
   );
-}
+};
 
 export function QuestTab(props: {
   // theme: Theme;
@@ -186,10 +175,14 @@ export function QuestTabContent({
 
   return (
     <>
-      {/* {TAB_CONTENTS.map((item, index) => (
-        <React.Fragment key={`content-${index}`}>{item.content}</React.Fragment>
-      ))} */}
-      {TAB_CONTENTS[tabIndex].content}
+       {TAB_CONTENTS.map((tab) => (
+        <TabPanel
+          key={tab.id}
+          activeTab={tabIndex}
+          index={tab.id}
+          children={tab.content}
+        />
+      ))}
     </>
   );
 }

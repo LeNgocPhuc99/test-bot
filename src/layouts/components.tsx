@@ -156,9 +156,9 @@ export const QuestPageWrapper = () => {
           })}
         >
           <Container sx={{ maxWidth: "800px !important" }}>
-            {/* <Box sx={{mb: '1rem'}}>
+            <Box sx={{mb: '1rem'}}>
               <BottomSwipeableDrawer />
-            </Box> */}
+            </Box>
             <QuestPage
               tabIndex={tabIndex}
               handleMoveToRank={handleMoveToRank}

@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 import TelegramQuest from "../views/quest/TelegramQuest";
+import { Paper } from "@mui/material";
 
 const BottomSwipeableDrawer = () => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
@@ -34,7 +35,7 @@ const BottomSwipeableDrawer = () => {
         onClose={handleCloseDrawer}
         onOpen={handleOpenDrawer}
         PaperProps={{
-          id: "scrollable-drawer",
+          className: "pixel-borders--dark--2",
           style: {
             height: "70vh",
             padding: "1rem",

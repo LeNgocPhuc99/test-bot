@@ -23,75 +23,55 @@ const QuestPage = ({
 }) => {
   const { t, i18n } = useTranslation();
 
-  useEffect(() => {
-    if (window.tgAppInitiated) return;
-    window.tgAppInitiated = true;
-    console.log("Init Tg");
+  // useEffect(() => {
+  //   const overflow = 100;
 
-    const overflow = 100;
-    function setupDocument(enable: boolean) {
-      if (enable) {
-        document.body.style.marginTop = `${overflow}px`;
-        document.body.style.height = window.innerHeight + overflow + "px";
-        document.body.style.paddingBottom = `${overflow}px`;
-        window.scrollTo(0, overflow);
-      } else {
-        document.body.style.removeProperty("marginTop");
-        document.body.style.removeProperty("height");
-        document.body.style.removeProperty("paddingBottom");
-        window.scrollTo(0, 0);
-      }
-    }
+  //   const scrollableEl = document.getElementById("scrollable-el");
+  //   let ts: number | undefined;
+  //   const onTouchStart = (e: TouchEvent) => {
+  //     ts = e.touches[0].clientY;
+  //   };
+  //   const onTouchMove = (e: TouchEvent) => {
+  //     if (scrollableEl) {
+  //       // console.warn("onTouchMove");
+  //       const scroll = scrollableEl.scrollTop;
+  //       const te = e.changedTouches[0].clientY;
+  //       if (scroll <= 0 && ts! < te) {
+  //         if (e.cancelable) {
+  //           e.preventDefault();
+  //         }
+  //       }
+  //     } else {
+  //       if (e.cancelable) {
+  //         e.preventDefault();
+  //       }
+  //     }
+  //   };
+  //   document.documentElement.addEventListener("touchstart", onTouchStart, {
+  //     passive: false,
+  //   });
+  //   document.documentElement.addEventListener("touchmove", onTouchMove, {
+  //     passive: false,
+  //   });
 
-    setupDocument(true);
+  //   const onScroll = () => {
+  //     if (window.scrollY < overflow) {
+  //       window.scrollTo(0, overflow);
+  //       if (scrollableEl) {
+  //         scrollableEl.scrollTo(0, 0);
+  //       }
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll, { passive: true });
 
-    const scrollableEl = document.getElementById("scrollable-el");
-    let ts: number | undefined;
-    const onTouchStart = (e: TouchEvent) => {
-      ts = e.touches[0].clientY;
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (scrollableEl) {
-        // console.warn("onTouchMove");
-        const scroll = scrollableEl.scrollTop;
-        const te = e.changedTouches[0].clientY;
-        if (scroll <= 0 && ts! < te) {
-          if (e.cancelable) {
-            e.preventDefault();
-          }
-        }
-      } else {
-        if (e.cancelable) {
-          e.preventDefault();
-        }
-      }
-    };
-    document.documentElement.addEventListener("touchstart", onTouchStart, {
-      passive: false,
-    });
-    document.documentElement.addEventListener("touchmove", onTouchMove, {
-      passive: false,
-    });
+  //   // authorize here
 
-    const onScroll = () => {
-      if (window.scrollY < overflow) {
-        window.scrollTo(0, overflow);
-        if (scrollableEl) {
-          scrollableEl.scrollTo(0, 0);
-        }
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    // authorize here
-
-    return () => {
-      setupDocument(false);
-      document.documentElement.removeEventListener("touchstart", onTouchStart);
-      document.documentElement.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
+  //   return () => {
+  //     document.documentElement.removeEventListener("touchstart", onTouchStart);
+  //     document.documentElement.removeEventListener("touchmove", onTouchMove);
+  //     window.removeEventListener("scroll", onScroll);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -119,6 +99,7 @@ const QuestPage = ({
 };
 
 import bgImage from "../assets/static/memetd/background.png";
+import BottomSwipeableDrawer from "../core/components/BottomSwipeableDrawer";
 
 export const QuestPageWrapper = () => {
   const [tabIndex, setTabIndex] = useState<number>(TabEnum.TICKET);
@@ -128,6 +109,33 @@ export const QuestPageWrapper = () => {
   const bottomBarHeight = document.getElementById(
     "memetd-bottom-nav-bar"
   )?.clientHeight;
+
+  // useEffect(() => {
+  //   if (window.tgAppInitiated) return;
+  //   window.tgAppInitiated = true;
+  //   console.log("Init Tg");
+
+  //   const overflow = 100;
+  //   function setupDocument(enable: boolean) {
+  //     if (enable) {
+  //       document.body.style.marginTop = `${overflow}px`;
+  //       document.body.style.height = window.innerHeight + overflow + "px";
+  //       document.body.style.paddingBottom = `${overflow}px`;
+  //       window.scrollTo(0, overflow);
+  //     } else {
+  //       document.body.style.removeProperty("marginTop");
+  //       document.body.style.removeProperty("height");
+  //       document.body.style.removeProperty("paddingBottom");
+  //       window.scrollTo(0, 0);
+  //     }
+  //   }
+
+  //   setupDocument(true);
+
+  //   return () => {
+  //     setupDocument(false);
+  //   };
+  // }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -191,6 +199,9 @@ export const QuestPageWrapper = () => {
           })}
         >
           <Container sx={{ maxWidth: "800px !important" }}>
+            <Box sx={{ mb: "1rem" }}>
+              <BottomSwipeableDrawer />
+            </Box>
             <QuestPage
               tabIndex={tabIndex}
               handleMoveToRank={handleMoveToRank}

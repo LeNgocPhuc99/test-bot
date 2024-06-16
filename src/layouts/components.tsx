@@ -1,18 +1,13 @@
 // ** React Import
 import { useState, useCallback, useEffect } from "react";
 
-import { useTranslation } from "react-i18next";
-
 // ** MUI Import
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import BottomNavigation from "@mui/material/BottomNavigation";
 
 import { TabEnum, QuestTab, QuestTabContent } from "../core/pages/QuestPage";
-
-import questImg from "../assets/icons/QuestSmall.png";
 
 const QuestPage = ({
   tabIndex,
@@ -21,8 +16,7 @@ const QuestPage = ({
   tabIndex: number;
   handleMoveToRank: () => void;
 }) => {
-  const { t, i18n } = useTranslation();
-
+  
   useEffect(() => {
     if (window.tgAppInitiated) return;
     window.tgAppInitiated = true;
@@ -46,33 +40,7 @@ const QuestPage = ({
     setupDocument(true);
 
     const scrollableEl = document.getElementById("scrollable-el");
-    let ts: number | undefined;
-    const onTouchStart = (e: TouchEvent) => {
-      ts = e.touches[0].clientY;
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (scrollableEl) {
-        // console.warn("onTouchMove");
-        const scroll = scrollableEl.scrollTop;
-        const te = e.changedTouches[0].clientY;
-        if (scroll <= 0 && ts! < te) {
-          if (e.cancelable) {
-            e.preventDefault();
-          }
-        }
-      } else {
-        if (e.cancelable) {
-          e.preventDefault();
-        }
-      }
-    };
-    // document.documentElement.addEventListener("touchstart", onTouchStart, {
-    //   passive: false,
-    // });
-    // document.documentElement.addEventListener("touchmove", onTouchMove, {
-    //   passive: false,
-    // });
-
+   
     const onScroll = () => {
       if (window.scrollY < overflow) {
         window.scrollTo(0, overflow);
@@ -83,12 +51,8 @@ const QuestPage = ({
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // authorize here
-
     return () => {
       setupDocument(false);
-      // document.documentElement.removeEventListener("touchstart", onTouchStart);
-      // document.documentElement.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);

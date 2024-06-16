@@ -66,12 +66,12 @@ const QuestPage = ({
         }
       }
     };
-    document.documentElement.addEventListener("touchstart", onTouchStart, {
-      passive: false,
-    });
-    document.documentElement.addEventListener("touchmove", onTouchMove, {
-      passive: false,
-    });
+    // document.documentElement.addEventListener("touchstart", onTouchStart, {
+    //   passive: false,
+    // });
+    // document.documentElement.addEventListener("touchmove", onTouchMove, {
+    //   passive: false,
+    // });
 
     const onScroll = () => {
       if (window.scrollY < overflow) {
@@ -87,8 +87,8 @@ const QuestPage = ({
 
     return () => {
       setupDocument(false);
-      document.documentElement.removeEventListener("touchstart", onTouchStart);
-      document.documentElement.removeEventListener("touchmove", onTouchMove);
+      // document.documentElement.removeEventListener("touchstart", onTouchStart);
+      // document.documentElement.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);

@@ -39,21 +39,21 @@ const QuestPage = ({
 
     setupDocument(true);
 
-    const scrollableEl = document.getElementById("scrollable-el");
+    // const scrollableEl = document.getElementById("scrollable-el");
    
-    const onScroll = () => {
-      if (window.scrollY < overflow) {
-        window.scrollTo(0, overflow);
-        if (scrollableEl) {
-          scrollableEl.scrollTo(0, 0);
-        }
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    // const onScroll = () => {
+    //   if (window.scrollY < overflow) {
+    //     window.scrollTo(0, overflow);
+    //     if (scrollableEl) {
+    //       scrollableEl.scrollTo(0, 0);
+    //     }
+    //   }
+    // };
+    // window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       setupDocument(false);
-      window.removeEventListener("scroll", onScroll);
+      // window.removeEventListener("scroll", onScroll);
     };
   }, []);
 

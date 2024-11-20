@@ -36,7 +36,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    window.open("https://t.me/lnp_test_bot?startapp");
+    window.open("https://t.me/ston_fi?startapp");
   };
 
   return (

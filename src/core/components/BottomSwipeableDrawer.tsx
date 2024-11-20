@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 import TelegramQuest from "../views/quest/TelegramQuest";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 
 const SWAP_LINK =
   "https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=EQAp-mWdS-oJ2R0XwC49VPHRkkLZ0I38THftyQniIRTOb_x-";
@@ -28,7 +28,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenSelf = () => {
-    window.open("https://t.me/lnp_test_bot?startapp");
+    window.open("https://t.me/lnp_test_bot?startapp=swap");
   };
 
   const handleOpenBlank = () => {
@@ -74,6 +74,7 @@ const BottomSwipeableDrawer = () => {
       >
         Open Self Link
       </Button>
+      <Typography>Params: {Telegram.WebApp.initDataUnsafe.start_param}</Typography>
       <SwipeableDrawer
         anchor="bottom"
         open={showDrawer}

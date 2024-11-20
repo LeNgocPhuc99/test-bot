@@ -36,7 +36,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    Telegram.WebApp.openTelegramLink("https://t.me/lnp_test_bot?startapp=swap");
+    Telegram.WebApp.openTelegramLink("https://t.me/lnp_test_bot?startapp");
   };
 
   return (
@@ -50,7 +50,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Bot 5
+        Open Bot
       </Button>
       <Button
         variant="contained"

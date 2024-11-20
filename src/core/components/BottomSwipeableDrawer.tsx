@@ -22,18 +22,6 @@ const BottomSwipeableDrawer = () => {
     setShowDrawer(false);
   };
 
-  const handleOpenParent = () => {
-    window.open(SWAP_LINK, "_parent");
-  };
-
-  const handleOpenTop = () => {
-    window.open(SWAP_LINK, "_top");
-  };
-
-  const handleOpenUnfencedTop = () => {
-    window.open(SWAP_LINK, "_unfencedTop");
-  };
-
   const handleOpenSelf = () => {
     window.open(SWAP_LINK, "_self");
   };
@@ -65,39 +53,6 @@ const BottomSwipeableDrawer = () => {
         }}
       >
         Open Self
-      </Button>
-      <Button
-        variant="contained"
-        className="pixel-button--primary--dark"
-        onClick={handleOpenParent}
-        sx={{
-          textTransform: "capitalize",
-          marginLeft: "8px",
-        }}
-      >
-        Open Parent
-      </Button>
-      <Button
-        variant="contained"
-        className="pixel-button--primary--dark"
-        onClick={handleOpenTop}
-        sx={{
-          textTransform: "capitalize",
-          marginLeft: "8px",
-        }}
-      >
-        Open Top
-      </Button>
-      <Button
-        variant="contained"
-        className="pixel-button--primary--dark"
-        onClick={handleOpenUnfencedTop}
-        sx={{
-          textTransform: "capitalize",
-          marginLeft: "8px",
-        }}
-      >
-        Open UnfencedTop
       </Button>
       <SwipeableDrawer
         anchor="bottom"

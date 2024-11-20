@@ -28,7 +28,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenSelf = () => {
-    window.open("https://t.me/lnp_test_bot");
+    window.open("https://t.me/lnp_test_bot?startapp");
   };
 
   const handleOpenBlank = () => {
@@ -72,7 +72,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Self
+        Open Self Link
       </Button>
       <SwipeableDrawer
         anchor="bottom"

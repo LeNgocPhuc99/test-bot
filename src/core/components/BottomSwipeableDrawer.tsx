@@ -36,7 +36,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    window.open("https://t.me/?startapp");
+    window.open("https://t.me/lnp_test_bot?startapp");
   };
 
   return (
@@ -50,7 +50,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Botttttt
+        Open Bottt
       </Button>
       <Button
         variant="contained"

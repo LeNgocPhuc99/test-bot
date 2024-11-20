@@ -1,5 +1,5 @@
 // ** React Import
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // ** MUI Import
 import Button from "@mui/material/Button";
@@ -13,6 +13,11 @@ const SWAP_LINK =
 
 const BottomSwipeableDrawer = () => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(window.location.pathname)
+    console.log(window.location.search)
+  }, [])
 
   const handleOpenDrawer = () => {
     setShowDrawer(true);
@@ -31,7 +36,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    window.open("https://t.me/lnp_test_bot?startapp");
+    window.open("https://t.me/lnp_test_bot?startapp&swap=true");
   };
 
   return (
@@ -45,7 +50,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Bot Update
+        Open Bot 1
       </Button>
       <Button
         variant="contained"

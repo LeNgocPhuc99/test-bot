@@ -36,7 +36,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    Telegram.WebApp.openTelegramLink("https://t.me/lnp_test_bot?startapp");
+    window.open("https://t.me/lnp_test_bot?startapp");
   };
 
   return (

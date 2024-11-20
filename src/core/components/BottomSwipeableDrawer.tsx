@@ -50,7 +50,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Bot
+        Open Botttttt
       </Button>
       <Button
         variant="contained"

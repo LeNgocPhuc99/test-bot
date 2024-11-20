@@ -30,8 +30,23 @@ const BottomSwipeableDrawer = () => {
     window.open(SWAP_LINK, "_blank");
   };
 
+  const handleOpenBot = () => {
+    window.open("https://t.me/ston-fi?startapp");
+  };
+
   return (
     <>
+      <Button
+        variant="contained"
+        className="pixel-button--primary--dark"
+        onClick={handleOpenBot}
+        sx={{
+          textTransform: "capitalize",
+          marginLeft: "8px",
+        }}
+      >
+        Open Bot
+      </Button>
       <Button
         variant="contained"
         className="pixel-button--primary--dark"

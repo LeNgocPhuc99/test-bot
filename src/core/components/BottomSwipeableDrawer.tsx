@@ -34,15 +34,37 @@ const BottomSwipeableDrawer = () => {
     window.open(SWAP_LINK, "_unfencedTop");
   };
 
+  const handleOpenSelf = () => {
+    window.open(SWAP_LINK, "_self");
+  };
+
+  const handleOpenBlank = () => {
+    window.open(SWAP_LINK, "_blank");
+  };
+
   return (
     <>
       <Button
-        className="pixel-button--primary--dark"
         variant="contained"
-        onClick={handleOpenDrawer}
-        sx={{ textTransform: "capitalize" }}
+        className="pixel-button--primary--dark"
+        onClick={handleOpenBlank}
+        sx={{
+          textTransform: "capitalize",
+          marginLeft: "8px",
+        }}
       >
-        Show Drawer
+        Open Blank
+      </Button>
+      <Button
+        variant="contained"
+        className="pixel-button--primary--dark"
+        onClick={handleOpenSelf}
+        sx={{
+          textTransform: "capitalize",
+          marginLeft: "8px",
+        }}
+      >
+        Open Self
       </Button>
       <Button
         variant="contained"

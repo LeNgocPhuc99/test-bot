@@ -31,7 +31,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    window.open("https://t.me/ston_fi?startapp");
+    window.open("https://t.me/@ston_fi?startapp");
   };
 
   return (
@@ -45,7 +45,7 @@ const BottomSwipeableDrawer = () => {
           marginLeft: "8px",
         }}
       >
-        Open Bot
+        Open Bot@
       </Button>
       <Button
         variant="contained"

@@ -23,7 +23,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenSwap = () => {
-    window.open(SWAP_LINK, "_blank");
+    window.open(SWAP_LINK, "_self");
   };
 
   return (

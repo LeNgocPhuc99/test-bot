@@ -27,16 +27,12 @@ const BottomSwipeableDrawer = () => {
     setShowDrawer(false);
   };
 
-  const handleOpenSelf = () => {
-    window.open("https://t.me/lnp_test_bot?startapp=swap");
+  const handleOpenCatBoxGame = () => {
+    window.open("https://t.me/CatBoxGame_bot?startapp");
   };
 
-  const handleOpenBlank = () => {
-    window.open(SWAP_LINK, "_blank");
-  };
-
-  const handleOpenBot = () => {
-    window.open("https://t.me/ston_fi?startapp");
+  const handleOpenCatBoxDex = () => {
+    window.open("https://t.me/CatBoxGame_bot/dex?startapp");
   };
 
   return (
@@ -44,35 +40,24 @@ const BottomSwipeableDrawer = () => {
       <Button
         variant="contained"
         className="pixel-button--primary--dark"
-        onClick={handleOpenBot}
+        onClick={handleOpenCatBoxGame}
         sx={{
           textTransform: "capitalize",
           marginLeft: "8px",
         }}
       >
-        Open Telegram Link
+        Open Cat Box Dex
       </Button>
       <Button
         variant="contained"
         className="pixel-button--primary--dark"
-        onClick={handleOpenBlank}
+        onClick={handleOpenCatBoxDex}
         sx={{
           textTransform: "capitalize",
           marginLeft: "8px",
         }}
       >
-        Open Blank
-      </Button>
-      <Button
-        variant="contained"
-        className="pixel-button--primary--dark"
-        onClick={handleOpenSelf}
-        sx={{
-          textTransform: "capitalize",
-          marginLeft: "8px",
-        }}
-      >
-        Open Self Link
+        Open Cat Box Dex
       </Button>
       <Typography>Params: {Telegram.WebApp.initDataUnsafe.start_param}</Typography>
       <SwipeableDrawer

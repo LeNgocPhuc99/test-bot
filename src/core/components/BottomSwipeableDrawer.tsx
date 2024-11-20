@@ -31,7 +31,7 @@ const BottomSwipeableDrawer = () => {
   };
 
   const handleOpenBot = () => {
-    window.open("https://t.me/ston-fi?startapp");
+    window.open("https://t.me/ston_fi?startapp");
   };
 
   return (

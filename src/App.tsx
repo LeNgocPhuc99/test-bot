@@ -2,10 +2,10 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import { usePrivy, useWallets } from "@privy-io/react-auth";
+import { usePrivy, useWallets, Wallet } from "@privy-io/react-auth";
 
 function App() {
-  const { login, logout, connectWallet, ready, authenticated } = usePrivy();
+  const { login, logout, connectWallet, createWallet, ready, authenticated, user } = usePrivy();
 
   const { wallets } = useWallets()
 
@@ -19,12 +19,28 @@ function App() {
     }
   }
 
+  const handleCreateWallet = () => {
+    return new Promise<Wallet>(async (resolve, reject) => {
+      try {
+        const wallet = await createWallet()
+
+        return resolve(wallet)
+      } catch (error) {
+        return reject(error)
+      }
+    })
+  }
+
   // @ts-ignore
   window.PrivyAction = {
+    user,
     wallets,
+
+
     login,
     logout,
     connectWallet,
+    handleCreateWallet,
     handleConnectWallet,
   };
 

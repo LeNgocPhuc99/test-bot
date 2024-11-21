@@ -13,6 +13,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.19",
+    "@privy-io/react-auth": "^1.94.3",
     "@twa-dev/sdk": "^6.4.2",
     "framer-motion": "^11.2.10",
     "i18next": "^23.11.5",
@@ -20,7 +21,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.2",
+    "react-router": "6",
+    "react-router-dom": "6",
     "use-local-storage": "^2.3.6",
+    "viem": "^2.21.48",
     "vite-plugin-node-polyfills": "^0.7.0"
   },
   "devDependencies": {

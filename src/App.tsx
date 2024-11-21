@@ -1,34 +1,39 @@
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import "./App.css";
-import "./ribbon.css";
-import "./pixel/pixel-borders.scss";
-
-import { QuestPageWrapper } from "./layouts/components";
+import { usePrivy, useWallets } from "@privy-io/react-auth";
 
 function App() {
+  const { login, logout, connectWallet, ready, authenticated } = usePrivy();
+
+  const { wallets } = useWallets()
+
+  // @ts-ignore
+  window.PrivyAction = {
+    wallets,
+    login,
+    logout,
+    connectWallet,
+  };
+
   return (
-    <>
-      <Typography
-        component="h1"
-        sx={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          textAlign: "center",
-          width: "100vw",
-          height: "auto",
-          zIndex: "3979",
-          color: "#ffff00",
-          p: "2",
-          background: "rgb(0 0 0 / 70%);",
+    <Box>
+      <Typography sx={{ mb: "10px" }}>Test Privy Wallet</Typography>
+      <Button
+        sx={{ mr: "8px" }}
+        variant="contained"
+        onClick={() => {
+          console.log("Call login: ", ready, authenticated);
+          login();
         }}
       >
-        v2.0.7
-      </Typography>
-      <QuestPageWrapper />
-      );
-    </>
+        Login
+      </Button>
+      <Button variant="contained" onClick={() => logout()}>
+        Logout
+      </Button>
+    </Box>
   );
 }
 

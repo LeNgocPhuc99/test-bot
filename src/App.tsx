@@ -9,12 +9,23 @@ function App() {
 
   const { wallets } = useWallets()
 
+  const handleConnectWallet = (address:  string) => {
+    try {
+      connectWallet({
+        suggestedAddress: address
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   // @ts-ignore
   window.PrivyAction = {
     wallets,
     login,
     logout,
     connectWallet,
+    handleConnectWallet,
   };
 
   return (
